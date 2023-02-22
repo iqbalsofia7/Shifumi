@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import './Version1.css' //import du style CSS
 
-function VersionOptimisé1() {
+function Version1() {
     let tab = [1, 2, 3]
 //Etat pour chacun des objets
     const [randomTab, setRandomTab] = useState(null)
@@ -93,4 +93,4 @@ function VersionOptimisé1() {
     )
 }
 
-export default VersionOptimisé1
+export default Version1
