@@ -15,7 +15,7 @@ function App() {
   }
   return(
     <div className='App'>
-      <div className="btns">
+      <div className={mode[0] == true ? 'none' : mode[1] == true ? 'none' : 'btns'}>
         <h1>Choix du mode de Jeux</h1>
       <button onClick={()=>changeMode(0)} className="btn">👱 VS 🖥️</button>
       <br />
