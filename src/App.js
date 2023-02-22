@@ -19,7 +19,7 @@ function App() {
         <h1>Choix du mode de Jeux</h1>
       <button onClick={()=>changeMode(0)} className="btn">👱 VS 🖥️</button>
       <br />
-      <button onClick={()=>changeMode(1)} className="btn">👱 VS👱</button>
+      <button onClick={()=>changeMode(1)} className="btn">👱 VS 👱</button>
       </div> 
 
     {mode[0] == true ? <JoueurVSOrdi rafraichir={toRefresh}/> : mode[1] == true ? <JoueurVSJoueur rafraichir={toRefresh}/>  : null}
