@@ -59,7 +59,7 @@ span {
 }
 button {
     width: min-content;
-    margin: 5px auto;
+    margin: 0px auto;
     font-size: 25px;
     padding: 5px 10px;
     border-radius: 5px;
