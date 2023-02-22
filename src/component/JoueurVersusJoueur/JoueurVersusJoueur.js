@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import './JoueurVersusJoueur.css' //import du style CSS
 
-function JoueurVersusJoueur() {
+function JoueurVersusJoueur(props) {
     const [choix, setChoix] = useState([false, false, false])
     const [choix2, setChoix2] = useState([false, false, false])
     const changerChoix =(index)=>{
@@ -13,9 +13,6 @@ function JoueurVersusJoueur() {
         const newChoix2 = [...choix2]
         newChoix2[index2] = !newChoix2[index2]
         setChoix2(newChoix2)
-    }
-    const rafraichir =()=>{
-        window.location.reload()
     }
 //Conditions qui vérifient la carte du joueur et celle de l'ordinateur
     useEffect(() => {
@@ -77,7 +74,7 @@ function JoueurVersusJoueur() {
                         <span>✌️</span>
                     </div>
                 </div>
-                <button onClick={rafraichir}>Rejouer</button>
+                <button onClick={props.rafraichir}>Rejouer</button>
             </div>
         </section>
     )

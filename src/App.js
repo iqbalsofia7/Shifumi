@@ -10,6 +10,9 @@ function App() {
     newMode[index] = !newMode[index]
     setMode(newMode)
   }
+  let toRefresh=()=>{
+    setMode([false, false])
+  }
   return(
     <div className='App'>
       <div className="btns">
@@ -19,12 +22,9 @@ function App() {
       <button onClick={()=>changeMode(1)} className="btn">👱 VS👱</button>
       </div> 
 
-    {mode[0] == true ? <JoueurVSOrdi/> : mode[1] == true ? <JoueurVSJoueur/>  : null}
+    {mode[0] == true ? <JoueurVSOrdi rafraichir={toRefresh}/> : mode[1] == true ? <JoueurVSJoueur rafraichir={toRefresh}/>  : null}
     {/* {mode[1] == true ? <JoueurVSJoueur/>  : null} */}
 
-      {/* <Version1 /> */}
-      {/* <JoueurVSOrdi/> */}
-      {/* <JoueurVSJoueur/> */}
     </div>
   )
 }

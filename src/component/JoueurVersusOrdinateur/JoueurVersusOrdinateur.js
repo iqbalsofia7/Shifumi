@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import './JoueurVersusOrdinateur.css' //import du style CSS
 
-function MaFonction2() {
+function MaFonction2(props) {
     let tab = [0, 1, 2]
     const [randomTab, setRandomTab] = useState(null)
     const [choix, setChoix] = useState([false, false, false])
@@ -11,9 +11,6 @@ function MaFonction2() {
         setChoix(newChoix)
         setRandomTab(tab[Math.floor(Math.random()*tab.length)])
         console.log(randomTab);
-    }
-    const rafraichir =()=>{
-        window.location.reload()
     }
 //Conditions qui vérifient la carte du joueur et celle de l'ordinateur
     useEffect(() => {
@@ -77,7 +74,7 @@ function MaFonction2() {
                         <span>✌️</span>
                     </div>
                 </div>
-                <button onClick={rafraichir}>Rejouer</button>
+                <button onClick={props.rafraichir}>Rejouer</button>
             </div>
         </section>
     )
