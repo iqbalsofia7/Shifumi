@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react'
 import './Manchex3JvsO.css'
 
+// Joueur Versus Ordinateur en 3 Manches :
+
+
 function MaFonction2(props) {
+
+//Conditions qui vérifient la carte du joueur et celle de l'ordinateur
     let tab = [0, 1, 2]
     const [randomTab, setRandomTab] = useState(null)
-    const [scoreJ, setScoreJ] = useState(0)
-    const [scoreO, setScore0] = useState(0)
     const [choix, setChoix] = useState([false, false, false])
     const changerChoix =(index)=>{
         const newChoix = [...choix]
@@ -14,7 +17,6 @@ function MaFonction2(props) {
         setRandomTab(tab[Math.floor(Math.random()*tab.length)])
         console.log(randomTab);
     }
-//Conditions qui vérifient la carte du joueur et celle de l'ordinateur
     useEffect(() => {
         if ((choix[1] == true && randomTab == 1) || (choix[2] == true && randomTab == 2) || (choix[0]==true && randomTab==0) ) {
             setTimeout(() => {
@@ -42,6 +44,10 @@ function MaFonction2(props) {
         }
     }, [randomTab, choix])
 
+
+//Conditions qui vérifient le score de l'ordinateur et du joueur
+const [scoreJ, setScoreJ] = useState(0)
+const [scoreO, setScore0] = useState(0)
     useEffect(() => {
         if (scoreO == 3) {
             alert("L'ordinateur a remporté la partie")
@@ -60,7 +66,6 @@ function MaFonction2(props) {
     return(
         <section className='sec1'>
 {/* Choix random */}
-
             <div className='cards'>
                 <div className='p'>
                     <p>Ordinateur : {scoreO}</p>

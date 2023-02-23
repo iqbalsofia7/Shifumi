@@ -67,6 +67,6 @@ button {
 button:hover {
     background-color: black;
     color: white;
-    margin: auto;
+    /* margin: auto; */
     text-align: center;
 }
