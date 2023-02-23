@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react'
 import './Manchex3JvsO.css'
 
 // Joueur Versus Ordinateur en 3 Manches :
-
-
 function MaFonction2(props) {
 
 //Conditions qui vérifient la carte du joueur et celle de l'ordinateur
@@ -104,6 +102,5 @@ const [scoreO, setScore0] = useState(0)
         </section>
     )
 }
-
 
 export default MaFonction2

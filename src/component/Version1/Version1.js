@@ -53,7 +53,7 @@ function Version1() {
 
     return(
         <section className='sec1'>
-{/* Choix random */}
+{/* Choix random par l'ordinateur */}
             <div className='cards'>
                 <div className='p'>
                     <p>Ordinateur</p>

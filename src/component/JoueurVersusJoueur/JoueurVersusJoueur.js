@@ -1,14 +1,17 @@
 import { useState, useEffect } from 'react'
 import './JoueurVersusJoueur.css' //import du style CSS
 
+// Joueur VS Joueur (1 manche)
 function JoueurVersusJoueur(props) {
+//Joueur 2
     const [choix, setChoix] = useState([false, false, false])
-    const [choix2, setChoix2] = useState([false, false, false])
     const changerChoix =(index)=>{
         const newChoix = [...choix]
         newChoix[index] = !newChoix[index]
         setChoix(newChoix)
     }
+//Joueur 1
+    const [choix2, setChoix2] = useState([false, false, false])
     const changerChoix2 =(index2)=>{
         const newChoix2 = [...choix2]
         newChoix2[index2] = !newChoix2[index2]
@@ -42,6 +45,7 @@ function JoueurVersusJoueur(props) {
 
     return(
         <section className='sec1'>
+{/* Choix du Joueur 1 */}
             <div className='cards'>
                 <div className='p'>
                     <p className='blue'>Joueur 1</p>
@@ -59,6 +63,7 @@ function JoueurVersusJoueur(props) {
                 </div>
             </div>
 
+{/* Choix du Joueur 2  */}
             <div className='cards'>
                 <div className='p'>
                     <p>Joueur 2</p>

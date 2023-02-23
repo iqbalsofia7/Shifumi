@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react'
 import './JoueurVersusOrdinateur.css' //import du style CSS
 
+//Joueur VS Ordinateur (une manche)
 function MaFonction2(props) {
+    //Tableau pour associer chacun des chiffre à une carte
     let tab = [0, 1, 2]
     const [randomTab, setRandomTab] = useState(null)
     const [choix, setChoix] = useState([false, false, false])
