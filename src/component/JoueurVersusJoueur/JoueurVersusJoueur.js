@@ -26,6 +26,9 @@ function JoueurVersusJoueur(props) {
                 setChoix([false, false, false])
                 // setChoix[index] 
             }, 700);
+            setTimeout(() => {
+                window.location.reload()
+            }, 2000);
         }
         if ((choix[0] == true && choix2[2] == true) || (choix[1] == true && choix2[0] == true) || (choix[2] == true && choix2[1] == true)){
             setTimeout(() => {
@@ -33,6 +36,9 @@ function JoueurVersusJoueur(props) {
                 setChoix2([false, false, false])
                 setChoix([false, false, false])
             }, 700);
+            setTimeout(() => {
+                window.location.reload()
+            }, 2000);
         }
         if ((choix2[1] == true && choix[0] == true) || (choix2[2]==true && choix[1] == true) || ( choix2[0] == true && choix[2] == true)) {
             setTimeout(() => {
@@ -40,6 +46,9 @@ function JoueurVersusJoueur(props) {
             setChoix2([false, false, false])
             setChoix([false, false, false])
             }, 700);
+            setTimeout(() => {
+                window.location.reload()
+            }, 2000);
         }
     }, [choix2, choix])
 

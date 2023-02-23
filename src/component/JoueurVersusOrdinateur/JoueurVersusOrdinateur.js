@@ -22,7 +22,9 @@ function MaFonction2(props) {
                 setChoix([false, false, false])
                 setRandomTab(null)
             }, 700);
-            
+            setTimeout(() => {
+                window.location.reload()
+            }, 2000);
         }
         if ((choix[0] == true && randomTab == 2) || (choix[1] == true && randomTab == 0) || (choix[2] == true && randomTab == 1)){
             setTimeout(() => {
@@ -30,6 +32,9 @@ function MaFonction2(props) {
                 setChoix([false, false, false])
                 setRandomTab(null)
             }, 700);
+            setTimeout(() => {
+                window.location.reload()
+            }, 2000);
         }
         if ((randomTab == 1 && choix[0] == true) || (randomTab==2 && choix[1] == true) || (randomTab == 0 && choix[2] == true)) {
             setTimeout(() => {
@@ -37,6 +42,9 @@ function MaFonction2(props) {
             setChoix([false, false, false])
             setRandomTab(null)
             }, 700);
+            setTimeout(() => {
+                window.location.reload()
+            }, 2000);
         }
     }, [randomTab, choix])
 
