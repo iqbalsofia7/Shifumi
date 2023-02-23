@@ -74,7 +74,7 @@ function JoueurVersusJoueur(props) {
                         <span>✌️</span>
                     </div>
                 </div>
-                <button onClick={props.rafraichir}>Menu</button>
+                <button className='menu' onClick={props.rafraichir}>Menu</button>
             </div>
         </section>
     )

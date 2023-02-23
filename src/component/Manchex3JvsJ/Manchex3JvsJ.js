@@ -66,7 +66,7 @@ function Manchex3JoueurVersusJoueur(props) {
         <section className='sec1'>
             <div className='cards'>
                 <div className='p'>
-                    <p className='blue'>Joueur 1 : {scoreJ1}</p>
+                    <p className='blue'>Joueur 1 : {scoreJ1}/3</p>
                 </div>
                 <div className='flex'>                
                     <div onClick={()=>changerChoix2(0)} className='card'>
@@ -83,7 +83,7 @@ function Manchex3JoueurVersusJoueur(props) {
 
             <div className='cards'>
                 <div className='p'>
-                    <p>Joueur 2 : {scoreJ2}</p>
+                    <p>Joueur 2 : {scoreJ2}/3</p>
                 </div>
                 <div className='flex'>                
                     <div onClick={()=>changerChoix(0)} className='card'>
@@ -96,7 +96,7 @@ function Manchex3JoueurVersusJoueur(props) {
                         <span>✌️</span>
                     </div>
                 </div>
-                <button onClick={props.rafraichir}>Menu</button>
+                <button className='menu' onClick={props.rafraichir}>Menu</button>
             </div>
         </section>
     )

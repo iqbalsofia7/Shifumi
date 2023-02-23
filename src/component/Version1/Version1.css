@@ -21,6 +21,7 @@ span {
 }
 .card:hover {
     background-color: black;
+    box-shadow: 0px 0px 5px 2px white;
 }
 .cardBlack {
     background: #000;

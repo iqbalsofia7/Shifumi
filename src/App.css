@@ -2,15 +2,20 @@
     display: flex;
     justify-content: center;
     margin: auto;
+    background: #99a8b1;
     flex-direction: column;
     align-items: center;
     width: 100%;
     font-family: Arial, Helvetica, sans-serif;
 }
+body {
+    background: #99a8b1;
+}
 .btn {
-    width: 500px;
-    font-size: 100px;
+    width: 400px;
+    font-size: 80px;
     text-align: center;
+    background: white;
 }
 .btns {
     display: flex;
@@ -25,13 +30,14 @@
 }
 .btnTrue {
     background: #000000;
-    width: 500px;
-    font-size: 100px;
+    width: 400px;
+    font-size: 80px;
     text-align: center;
-    color: white
+    color: white;
+    box-shadow: 0px 0px 8px 2px;
 }
 h1 {
-    font-size: 50px;
+    font-size: 30px;
     margin: 10px auto
 }
 .none {
@@ -47,9 +53,23 @@ h1 {
 }
 .btnM {
     width: auto;
+    background: white;
 }
 .btnMtrue {
     background: #000;
     width: auto;
-    color: white
+    color: white;
+}
+.play {
+    background: #000;
+    color: white;
+}
+.boutonPlay {
+    background: white;
+    color: black;
+}
+.menu {
+    position: absolute;
+    top: 15px;
+    right: 15px;
 }

@@ -24,7 +24,7 @@ function MaFonction2(props) {
         }
         if ((choix[0] == true && randomTab == 2) || (choix[1] == true && randomTab == 0) || (choix[2] == true && randomTab == 1)){
             setTimeout(() => {
-                alert ('Tu as gagné cette manche')
+                alert ('Tu as remporté la partie')
                 setChoix([false, false, false])
                 setRandomTab(null)
             }, 700);
@@ -74,7 +74,7 @@ function MaFonction2(props) {
                         <span>✌️</span>
                     </div>
                 </div>
-                <button onClick={props.rafraichir}>Menu</button>
+                <button className='menu' onClick={props.rafraichir}>Menu</button>
             </div>
         </section>
     )

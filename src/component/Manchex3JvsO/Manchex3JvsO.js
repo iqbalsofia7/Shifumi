@@ -68,7 +68,7 @@ const [scoreO, setScore0] = useState(0)
 {/* Choix random */}
             <div className='cards'>
                 <div className='p'>
-                    <p>Ordinateur : {scoreO}</p>
+                    <p>Ordinateur : {scoreO}/3</p>
                 </div>
                 <div className='flex'>                
                     <div className={randomTab == 0 ? 'cardOrdinateur' : 'card1'}>
@@ -86,7 +86,7 @@ const [scoreO, setScore0] = useState(0)
 {/* Choix du joueur */}
             <div className='cards'>
                 <div className='p'>
-                    <p>Joueur : {scoreJ}</p>
+                    <p>Joueur : {scoreJ}/3</p>
                 </div>
                 <div className='flex'>                
                     <div onClick={()=>changerChoix(0)} className={choix[0] ? 'cardBlack' : 'card'}>
@@ -99,7 +99,7 @@ const [scoreO, setScore0] = useState(0)
                         <span>✌️</span>
                     </div>
                 </div>
-                <button onClick={props.rafraichir}>Menu</button>
+                <button className='menu' onClick={props.rafraichir}>Menu</button>
             </div>
         </section>
     )
