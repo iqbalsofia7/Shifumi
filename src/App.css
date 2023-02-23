@@ -26,7 +26,9 @@ body {
     height: 100vh;
 }
 .btn:hover {
-    margin: 0px
+    margin: 0px;
+    background: #000;
+    color: white;
 }
 .btnTrue {
     background: #000000;
@@ -55,6 +57,10 @@ h1 {
     width: auto;
     background: white;
 }
+.btnM:hover {
+    background: #000;
+    color: white
+}
 .btnMtrue {
     background: #000;
     width: auto;
@@ -68,8 +74,16 @@ h1 {
     background: white;
     color: black;
 }
+.boutonPlay:hover {
+    background: #000;
+    color: white
+}
 .menu {
     position: absolute;
     top: 15px;
     right: 15px;
+}
+.menu:hover {
+    background: #000;
+    color: white
 }
