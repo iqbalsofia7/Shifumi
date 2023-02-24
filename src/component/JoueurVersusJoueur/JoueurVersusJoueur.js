@@ -4,6 +4,7 @@ import './JoueurVersusJoueur.css' //import du style CSS
 // Joueur VS Joueur (1 manche)
 function JoueurVersusJoueur(props) {
 //Joueur 2
+    const [scoreJ2, setScoreJ2] = useState(0)
     const [choix, setChoix] = useState([false, false, false])
     const changerChoix =(index)=>{
         const newChoix = [...choix]
@@ -11,6 +12,7 @@ function JoueurVersusJoueur(props) {
         setChoix(newChoix)
     }
 //Joueur 1
+    const [scoreJ1, setScoreJ1] = useState(0)
     const [choix2, setChoix2] = useState([false, false, false])
     const changerChoix2 =(index2)=>{
         const newChoix2 = [...choix2]
@@ -26,13 +28,11 @@ function JoueurVersusJoueur(props) {
                 setChoix([false, false, false])
                 // setChoix[index] 
             }, 700);
-            setTimeout(() => {
-                window.location.reload()
-            }, 2000);
         }
         if ((choix[0] == true && choix2[2] == true) || (choix[1] == true && choix2[0] == true) || (choix[2] == true && choix2[1] == true)){
             setTimeout(() => {
                 alert ('Joueur 2 a gagné cette manche')
+                setScoreJ2(1)
                 setChoix2([false, false, false])
                 setChoix([false, false, false])
             }, 700);
@@ -42,6 +42,7 @@ function JoueurVersusJoueur(props) {
         }
         if ((choix2[1] == true && choix[0] == true) || (choix2[2]==true && choix[1] == true) || ( choix2[0] == true && choix[2] == true)) {
             setTimeout(() => {
+            setScoreJ1(1)
             alert('Joueur 1 a gagné cette manche')
             setChoix2([false, false, false])
             setChoix([false, false, false])
@@ -57,7 +58,7 @@ function JoueurVersusJoueur(props) {
 {/* Choix du Joueur 1 */}
             <div className='cards'>
                 <div className='p'>
-                    <p className='blue'>Joueur 1</p>
+                    <p className='blue'>Joueur 1 : {scoreJ1}</p>
                 </div>
                 <div className='flex'>                
                     <div onClick={()=>changerChoix2(0)} className='card'>
@@ -75,7 +76,7 @@ function JoueurVersusJoueur(props) {
 {/* Choix du Joueur 2  */}
             <div className='cards'>
                 <div className='p'>
-                    <p>Joueur 2</p>
+                    <p>Joueur 2 : {scoreJ2}</p>
                 </div>
                 <div className='flex'>                
                     <div onClick={()=>changerChoix(0)} className='card'>

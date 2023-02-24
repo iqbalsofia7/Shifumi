@@ -7,6 +7,8 @@ function MaFonction2(props) {
     let tab = [0, 1, 2]
     const [randomTab, setRandomTab] = useState(null)
     const [choix, setChoix] = useState([false, false, false])
+    const [score, setScore] = useState(0)
+    const [scoreO, setScoreO] = useState(0)
     const changerChoix =(index)=>{
         const newChoix = [...choix]
         newChoix[index] = !newChoix[index]
@@ -22,15 +24,13 @@ function MaFonction2(props) {
                 setChoix([false, false, false])
                 setRandomTab(null)
             }, 700);
-            setTimeout(() => {
-                window.location.reload()
-            }, 2000);
         }
         if ((choix[0] == true && randomTab == 2) || (choix[1] == true && randomTab == 0) || (choix[2] == true && randomTab == 1)){
             setTimeout(() => {
                 alert ('Tu as remporté la partie')
                 setChoix([false, false, false])
                 setRandomTab(null)
+                setScore(1)
             }, 700);
             setTimeout(() => {
                 window.location.reload()
@@ -39,6 +39,7 @@ function MaFonction2(props) {
         if ((randomTab == 1 && choix[0] == true) || (randomTab==2 && choix[1] == true) || (randomTab == 0 && choix[2] == true)) {
             setTimeout(() => {
             alert('Tu as perdu')
+            setScoreO(1)
             setChoix([false, false, false])
             setRandomTab(null)
             }, 700);
@@ -53,7 +54,7 @@ function MaFonction2(props) {
 {/* Choix random */}
             <div className='cards'>
                 <div className='p'>
-                    <p>Ordinateur</p>
+                    <p>Ordinateur : {scoreO}</p>
                 </div>
                 <div className='flex'>                
                     <div className={randomTab == 0 ? 'cardOrdinateur' : 'card1'}>
@@ -71,7 +72,7 @@ function MaFonction2(props) {
 {/* Choix du joueur */}
             <div className='cards'>
                 <div className='p'>
-                    <p>Joueur</p>
+                    <p>Joueur : {score}</p>
                 </div>
                 <div className='flex'>                
                     <div onClick={()=>changerChoix(0)} className={choix[0] ? 'cardBlack' : 'card'}>
