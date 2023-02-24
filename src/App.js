@@ -36,7 +36,7 @@ function App() {
 
   return(
     <div className='App'>
-      <div className={(mode[0] && manche[0] && play) ? 'none' : (mode[1] && manche[1] && play) ? 'none' : (mode[0] && manche[1] && play) ? 'none' : mode[1] && manche[0] && play? 'none' : 'btns'}>
+      <div className={(mode[0] && manche[0] && play) || (mode[1] && manche[1] && play) || (mode[0] && manche[1] && play) || mode[1] && manche[0] && play? 'none' : 'btns'}>
         <h1>    
           <span>👊</span>
           <span>🖐️</span>
@@ -51,7 +51,7 @@ function App() {
           <button onClick={()=>changeManche(0)} className={manche[0] ? 'btnMtrue' : 'btnM'}>1️⃣ Manche</button>
           <button onClick={()=>changeManche(1)} className={manche[1] ? 'btnMtrue' : 'btnM'}> 3️⃣ Manches</button>
         </div>
-        <button onClick={playGame} className={mode[0] && manche[0] ? 'boutonPlay' : mode[1] && manche[0] ? 'boutonPlay' : mode[0] && manche[1] ? 'boutonPlay' : mode[1] && manche[1] ? 'boutonPlay' : 'none'}>PLAY</button>
+        <button onClick={playGame} className={mode[0] && manche[0] ||  mode[1] && manche[0] || mode[0] && manche[1] || mode[1] && manche[1] ? 'boutonPlay' : 'none'}>PLAY</button>
       </div> 
   {/* Conditions pour afficher le bon compenent en fonctions des choix du joueur  */}
     {mode[0] && manche[0] && play ? <JoueurVSOrdi rafraichir={toRefresh}/> : mode[1] && manche[0] && play ? <JoueurVSJoueur rafraichir={toRefresh}/> : mode[0] && manche[1] && play ? <Manchex3JoueurVSOrdinateur rafraichir={toRefresh}/> : mode[1] && manche[1] && play ? <Manchex3JoueurVSJoueur rafraichir={toRefresh}/> : ''}    
