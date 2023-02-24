@@ -63,15 +63,9 @@ function Manchex3JoueurVersusJoueur(props) {
     useEffect(() => {
         if (scoreJ1 === 3 ) {
             alert('Joueur 1 a remporté ce jeu')
-            setTimeout(() => {
-                window.location.reload()
-            }, 1000);
         }
         if (scoreJ2 === 3 ) {
             alert('Joueur 2 a remporté ce jeu')
-            setTimeout(() => {
-                window.location.reload()
-            }, 1000);
         }
     }, [choix2, choix])
 
