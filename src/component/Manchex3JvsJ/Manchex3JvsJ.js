@@ -49,15 +49,6 @@ function Manchex3JoueurVersusJoueur(props) {
         }
     }, [choix2, choix])
 
-    
-    const playAgain =()=>{
-        setTimeout(() => {
-        setScoreJ1(0)
-        setScoreJ2(0)
-        setChoix([false, false, false])
-        setChoix2([false, false, false])
-        }, 2000);
-    }
 
 //Vérification du score du gagnant
     useEffect(() => {
@@ -69,7 +60,12 @@ function Manchex3JoueurVersusJoueur(props) {
         }
     }, [choix2, choix])
 
-
+    const playAgain =()=>{
+        setScoreJ1(0)
+        setScoreJ2(0)
+        setChoix([false, false, false])
+        setChoix2([false, false, false])
+    }
 
     return(
         <section className='sec1'>

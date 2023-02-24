@@ -55,7 +55,6 @@ function MaFonction2(props) {
         setRandomTab(null)
         setScoreO(0)
         setScore(0)
-
     }
     return(
         <section className='sec1'>

@@ -43,11 +43,9 @@ function MaFonction2(props) {
     }, [randomTab, choix])
 
     const playAgain =()=>{
-        setTimeout(() => {
         setScore0(0)
         setScoreJ(0)
         setChoix([false, false, false])
-        }, 2000);
     }
 
 //Conditions qui vérifient le score de l'ordinateur et du joueur
