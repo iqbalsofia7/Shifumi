@@ -42,6 +42,13 @@ function MaFonction2(props) {
         }
     }, [randomTab, choix])
 
+    const playAgain =()=>{
+        setTimeout(() => {
+        setScore0(0)
+        setScoreJ(0)
+        setChoix([false, false, false])
+        }, 2000);
+    }
 
 //Conditions qui vérifient le score de l'ordinateur et du joueur
 const [scoreJ, setScoreJ] = useState(0)
@@ -49,15 +56,9 @@ const [scoreO, setScore0] = useState(0)
     useEffect(() => {
         if (scoreO == 3) {
             alert("L'ordinateur a remporté la partie")
-            setTimeout(() => {
-                window.location.reload()
-            }, 1000);
         }
         if (scoreJ == 3) {
             alert('Tu as remporté la partie')
-            setTimeout(() => {
-                window.location.reload()
-            }, 1000);
         }
     }, [randomTab, choix])
 
@@ -96,6 +97,9 @@ const [scoreO, setScore0] = useState(0)
                     <div onClick={()=>changerChoix(2)} className={choix[2] ? 'cardBlack' : 'card'}>
                         <span>✌️</span>
                     </div>
+                </div>
+                <div className={scoreJ == 3 || scoreO == 3 ? 'rejouer' : 'none'}>
+                    <button className='rejouerButton' onClick={playAgain}>Rejouer</button>
                 </div>
                 <button className='menu' onClick={props.rafraichir}>Menu</button>
             </div>

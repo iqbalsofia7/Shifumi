@@ -16,6 +16,7 @@ function MaFonction2(props) {
         setRandomTab(tab[Math.floor(Math.random()*tab.length)])
         console.log(randomTab);
     }
+
 //Conditions qui vérifient la carte du joueur et celle de l'ordinateur
     useEffect(() => {
         if ((choix[1] == true && randomTab == 1) || (choix[2] == true && randomTab == 2) || (choix[0]==true && randomTab==0) ) {
@@ -32,9 +33,9 @@ function MaFonction2(props) {
                 setRandomTab(null)
                 setScore(1)
             }, 700);
-            setTimeout(() => {
-                window.location.reload()
-            }, 2000);
+            // setTimeout(() => {
+            //     window.location.reload()
+            // }, 2000);
         }
         if ((randomTab == 1 && choix[0] == true) || (randomTab==2 && choix[1] == true) || (randomTab == 0 && choix[2] == true)) {
             setTimeout(() => {
@@ -43,12 +44,19 @@ function MaFonction2(props) {
             setChoix([false, false, false])
             setRandomTab(null)
             }, 700);
-            setTimeout(() => {
-                window.location.reload()
-            }, 2000);
+            // setTimeout(() => {
+            //     window.location.reload()
+            // }, 2000);
         }
     }, [randomTab, choix])
+//Rejouer 
+    const playAgain =()=>{
+        setChoix([false, false, false])
+        setRandomTab(null)
+        setScoreO(0)
+        setScore(0)
 
+    }
     return(
         <section className='sec1'>
 {/* Choix random */}
@@ -84,6 +92,9 @@ function MaFonction2(props) {
                     <div onClick={()=>changerChoix(2)} className={choix[2] ? 'cardBlack' : 'card'}>
                         <span>✌️</span>
                     </div>
+                </div>
+                <div className={score == 0 && scoreO == 0 ? 'none' : 'rejouer'}>
+                    <button className='rejouerButton' onClick={playAgain}>Rejouer</button>
                 </div>
                 <button className='menu' onClick={props.rafraichir}>Menu</button>
             </div>

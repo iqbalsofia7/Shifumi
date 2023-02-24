@@ -49,6 +49,16 @@ function Manchex3JoueurVersusJoueur(props) {
         }
     }, [choix2, choix])
 
+    
+    const playAgain =()=>{
+        setTimeout(() => {
+        setScoreJ1(0)
+        setScoreJ2(0)
+        setChoix([false, false, false])
+        setChoix2([false, false, false])
+        }, 2000);
+    }
+
 //Vérification du score du gagnant
     useEffect(() => {
         if (scoreJ1 === 3 ) {
@@ -101,6 +111,9 @@ function Manchex3JoueurVersusJoueur(props) {
                     <div onClick={()=>changerChoix(2)} className='card'>
                         <span>✌️</span>
                     </div>
+                </div>
+                <div className={scoreJ1 == 3 || scoreJ2 == 3 ? 'rejouer' : 'none'}>
+                    <button className='rejouerButton' onClick={playAgain}>Rejouer</button>
                 </div>
                 <button className='menu' onClick={props.rafraichir}>Menu</button>
             </div>

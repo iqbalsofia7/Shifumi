@@ -36,9 +36,6 @@ function JoueurVersusJoueur(props) {
                 setChoix2([false, false, false])
                 setChoix([false, false, false])
             }, 700);
-            setTimeout(() => {
-                window.location.reload()
-            }, 2000);
         }
         if ((choix2[1] == true && choix[0] == true) || (choix2[2]==true && choix[1] == true) || ( choix2[0] == true && choix[2] == true)) {
             setTimeout(() => {
@@ -47,11 +44,16 @@ function JoueurVersusJoueur(props) {
             setChoix2([false, false, false])
             setChoix([false, false, false])
             }, 700);
-            setTimeout(() => {
-                window.location.reload()
-            }, 2000);
+
         }
     }, [choix2, choix])
+
+    const playAgain =()=>{
+        setScoreJ1(0)
+        setScoreJ2(0)
+        setChoix([false, false, false])
+        setChoix2([false, false, false])
+    }
 
     return(
         <section className='sec1'>
@@ -88,6 +90,9 @@ function JoueurVersusJoueur(props) {
                     <div onClick={()=>changerChoix(2)} className='card'>
                         <span>✌️</span>
                     </div>
+                </div>
+                <div className={scoreJ1 == 0 && scoreJ2 == 0 ? 'none' : 'rejouer'}>
+                    <button className='rejouerButton' onClick={playAgain}>Rejouer</button>
                 </div>
                 <button className='menu' onClick={props.rafraichir}>Menu</button>
             </div>
